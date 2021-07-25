@@ -1,0 +1,27 @@
+body {
+    background-color: rgb(49, 49, 49);
+}
+.wrapper {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: rgb(207, 194, 157);
+    box-shadow: 0 0 5px 5px black;
+}
+
+.bookResults {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+
+    .bookCard {
+        border: 1px solid black;
+
+        .bookCover {
+            img {
+                width: 100%;
+            }
+        }
+
+    }
+}
