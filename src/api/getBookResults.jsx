@@ -4,12 +4,12 @@ import { titleBaseUrl } from "./endpoints"
 const getBookResults = async ( title, setResults, setLoading, setFailure, setSearchFlag, setOriginalSortOrder ) => {
     setSearchFlag(false);
     try {
-        const response = await axios(`${titleBaseUrl}${title}`);
+        const response = await axios(`${titleBaseUrl}${title}&limit=8`);
         const results = response.data.docs;
-        setResults(results.slice(0, 8));
+        setResults(results);
         setLoading(false);
         setFailure(false);
-        setOriginalSortOrder(results.slice(0, 8));
+        setOriginalSortOrder(results);
     } catch (error) {
         console.log(error);
         setLoading(false);
