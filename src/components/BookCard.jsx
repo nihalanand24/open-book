@@ -26,10 +26,12 @@ const BookCard = ({ worksUrl, title, year, author, coverID }) => {
 
   return (
     <div className="bookCard">
-      <p>{title} <span>({year})</span></p>
-      <p>
-        By: {author ? getAuthorsListString(author) : "N/A"}
-      </p>
+      <div className="titleAndAuthor">
+        <p className="bookTitle">{title} <span>({year})</span></p>
+        <p className="bookAuthor">
+          By: {author ? getAuthorsListString(author) : "N/A"}
+        </p>
+      </div>
       <div className="bookCover">
         {coverID ? (
           <img
@@ -41,8 +43,8 @@ const BookCard = ({ worksUrl, title, year, author, coverID }) => {
             <p>No image available</p>
           </div>
         )}
-        <a href={openLibraryUrl + worksUrl} target="_blank" rel="noreferrer">View on Open Library</a>
       </div>
+        <a href={openLibraryUrl + worksUrl} target="_blank" rel="noreferrer">View on Open Library</a>
     </div>
   );
 };

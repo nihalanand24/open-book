@@ -21,9 +21,9 @@ const ItemSort = ({ results, setResults, originalSortOrder }) => {
 
     return (
         <div className="itemSortRow">
-            <button onClick={sortAlphabetically}>Sort A-Z {sortedAZ ? `🠕` : `🠗`}</button>
-            <button onClick={sortByYearPublished}>Sort by Year {sortedYear ? `🠗` : `🠕`}</button>
-            <button onClick={() => setResults(originalSortOrder)}>Remove Custom Sort</button>
+            <button disabled={!results.length} onClick={sortAlphabetically}>Sort A-Z {sortedAZ ? `🠕` : `🠗`}</button>
+            <button disabled={!results.length} onClick={sortByYearPublished}>Sort by Year {sortedYear ? `🠗` : `🠕`}</button>
+            <button disabled={!results.length} onClick={() => setResults(originalSortOrder)}>Remove Custom Sort</button>
       </div>
     )
 }

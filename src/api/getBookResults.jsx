@@ -6,10 +6,10 @@ const getBookResults = async ( title, setResults, setLoading, setFailure, setSea
     try {
         const response = await axios(`${titleBaseUrl}${title}`);
         const results = response.data.docs;
-        setResults(results.slice(0, 10));
+        setResults(results.slice(0, 8));
         setLoading(false);
         setFailure(false);
-        setOriginalSortOrder(results.slice(0, 10));
+        setOriginalSortOrder(results.slice(0, 8));
     } catch (error) {
         console.log(error);
         setLoading(false);
